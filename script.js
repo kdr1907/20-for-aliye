@@ -33,6 +33,7 @@ birlikte nice güzel anılar biriktiririz.
 
 İyi ki varsın.
 
+İyi ki ALİYEM.
 Seni çok seviyorum. ❤️`;
 
 let i = 0;
