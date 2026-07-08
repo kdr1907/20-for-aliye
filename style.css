@@ -1,0 +1,440 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+    background:#09090b;
+
+    overflow:hidden;
+
+    height:100vh;
+
+}
+
+/* ===========================
+   ARKA PLAN
+=========================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,#ff4f8b22,transparent 40%),
+    radial-gradient(circle at bottom,#8b5cf622,transparent 35%),
+    linear-gradient(180deg,#09090b,#111827);
+
+    z-index:-2;
+
+}
+
+/* ===========================
+   KONFETİ CANVAS
+=========================== */
+
+#confetti{
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+/* ===========================
+   GİRİŞ
+=========================== */
+
+#loading{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+}
+
+/* ===========================
+   GLASS
+=========================== */
+
+.glass{
+
+    width:min(430px,95vw);
+
+    text-align:center;
+
+    padding:20px;
+
+    background:transparent;
+
+    border:none;
+
+    backdrop-filter:none;
+
+    box-shadow:none;
+
+}
+
+/* ===========================
+   KUTU
+=========================== */
+
+#gift{
+
+    width:220px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    animation:float 2.5s ease-in-out infinite;
+
+    transition:.35s;
+
+}
+
+#gift:hover{
+
+    transform:scale(1.08);
+
+    filter:drop-shadow(0 0 25px #ff4f8b);
+
+}
+
+/* ===========================
+   YAZILAR
+=========================== */
+
+h1{
+
+    margin-top:20px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+p{
+
+    margin-top:18px;
+
+    line-height:1.8;
+
+    color:#e5e7eb;
+
+}
+
+/* ===========================
+   BUTON
+=========================== */
+
+button{
+
+    margin-top:35px;
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:linear-gradient(135deg,#ff4f8b,#8b5cf6);
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 10px 35px rgba(255,79,139,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 20px 45px rgba(255,79,139,.55);
+
+}
+
+/* ===========================
+   STORY
+=========================== */
+
+#story{
+
+    position:fixed;
+
+    inset:0;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.slide{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:1s;
+
+}
+
+.slide.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+#restartBtn{
+
+    margin-top:25px;
+
+    width:auto;
+
+    padding:10px 18px;
+
+    font-size:14px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    background:#ffffff22;
+
+    color:white;
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    transition:.3s;
+
+}
+
+
+
+#restartBtn:hover{
+
+    background:#ff4f8b;
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   FOTOĞRAF
+=========================== */
+
+.slide img{
+
+    width:min(360px,90vw);
+
+    border-radius:28px;
+
+    margin:30px 0;
+
+    box-shadow:
+
+    0 20px 60px rgba(0,0,0,.5);
+
+    transition:1s;
+
+}
+
+.slide img:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* ===========================
+   BAŞLIKLAR
+=========================== */
+
+.slide h2{
+
+    font-size:clamp(30px,6vw,48px);
+
+    margin-bottom:15px;
+
+}
+
+.slide h3{
+
+    font-size:32px;
+
+    margin-top:20px;
+
+    color:#ff8fb8;
+
+}
+
+.slide p{
+
+    max-width:750px;
+
+    font-size:19px;
+
+}
+
+/* ===========================
+   FİNAL
+=========================== */
+
+.final h1{
+
+    font-size:110px;
+
+}
+
+.slide h2,
+.slide h3,
+.slide p,
+.final h1,
+.final h2,
+.final h3,
+.final p{
+
+    color:#fff;
+
+    text-shadow:0 2px 15px rgba(0,0,0,.7);
+
+}
+
+.final{
+
+    background:
+
+    linear-gradient(180deg,#09090b,#18181b);
+
+}
+
+/* ===========================
+   KUTU ANİMASYONU
+=========================== */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+/* ===========================
+   MOBİL
+=========================== */
+
+@media(max-width:768px){
+
+.glass{
+
+padding:28px;
+
+}
+
+#gift{
+
+width:170px;
+
+}
+
+h1{
+    font-size:34px;
+}
+.slide h2{
+    font-size:clamp(24px,5vw,38px);
+}
+.slide h3{
+    font-size:26px;
+}
+.slide p{
+    font-size:17px;
+    max-width:650px;
+}
+
+button{
+
+font-size:17px;
+
+padding:16px;
+
+}
+
+}
